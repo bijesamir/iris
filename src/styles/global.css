@@ -1,0 +1,10 @@
+:root {
+    ---darkest-color:#121619;
+    ---dark-color:#34393f;
+    ---highlight-color:#5300ff;
+    ---form-text-color:#c1c6cd;
+}
+body{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size:13px;
+}
