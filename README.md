@@ -6,7 +6,7 @@ yarn install # install dependencies
 yarn run start # start in dev mode
 ```
 
-## Develop
+## Developer
 
 ### Technology
 
