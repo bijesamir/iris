@@ -1,20 +1,15 @@
 import styled from 'styled-components';
-import { Logo } from '../../logo/Logo';
-import { MainNav } from '../../mainnav/MainNav';
-import { ArchiveSearch } from '../ArchiveSearch/archiveSearch';
+import { Logo } from '../../modules/Logo';
+import { MainNav } from "../../modules/Mainnav";
+import { ArchiveSearch } from "../../modules/ArchiveSearch";
+import { Style } from './Style';
 
-const Container = styled.div`
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  text-align: center;
-`;
 
 export function Home() {
   const activeNav = 'archive';
 
   return (
-    <Container>
+    <Style>
       <div className='site'>
         <div className='firstCol'>
           <Logo />
@@ -31,6 +26,6 @@ export function Home() {
     <Link href={"/reset"}>reset page</Link> */}
         {/* <HomepageCounter /> */}
       </div>
-    </Container>
+    </Style>
   );
 }

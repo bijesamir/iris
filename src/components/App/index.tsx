@@ -1,11 +1,10 @@
-import { HashRouter, Redirect, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { Home } from '../Pages/Home/Home';
-import '../..//styles/normalize.css';
-import '../../styles/global.css';
+
 
 export function App() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Switch>
         <Route exact path='/'>
           <Home />
@@ -14,6 +13,6 @@ export function App() {
           <Redirect to='/' />
         </Route>
       </Switch>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
