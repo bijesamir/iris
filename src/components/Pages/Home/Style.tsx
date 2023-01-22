@@ -8,12 +8,16 @@ export const Style = styled.div`
         max-width: 57px;
     }
     .secondCol{
-        background:var(---darkest-color); 
-        width:330px;
+        background:var(---second-col-bg); 
+        min-width:330px;
         flex:0 1 auto;
         max-width:330px;
     }
     .thirdCol{
         flex:1;
+        
+        .mapHolder{
+            height:100%;
+        }
     }
 `

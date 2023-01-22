@@ -9,7 +9,7 @@ export const MainNav: React.FC<MainNavProps> = ({ active }) => {
     <Style>
     
       <ul>
-        <li>
+        <li className={active === 'tasking-search' ? 'active' : ''}>
           <img src={img.nav1} width='54' />
         </li>
         <li>
