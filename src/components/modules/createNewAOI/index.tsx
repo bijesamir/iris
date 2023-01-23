@@ -11,10 +11,12 @@ interface CreateNewAOIProps {
 export const CreateNewAOI: React.FC<CreateNewAOIProps> = ({show=false,onClose=()=>{},onUpload,onStart}) => {
     const uploadCSV = React.useRef(null);
     const uploadFileHandlder = (event: React.FormEvent<HTMLInputElement>): void => {
-       onUpload(event);
+      // @ts-ignore
+        onUpload(event);
       }
     const uploadTriggerHandler = (event: React.MouseEvent<HTMLButtonElement>):void =>{
        console.log(uploadCSV);
+       // @ts-ignore
        uploadCSV.current.click();
     }
 	return (
@@ -23,10 +25,10 @@ export const CreateNewAOI: React.FC<CreateNewAOIProps> = ({show=false,onClose=()
             <div className={`createAOI ${show ? 'show' :'hide'}`}>   
 			<div className="box">
                 <div className="header">
-                {show ?  <b>show</b> : <b>hide</b>}    
+                 
                     <div className="left">
-                    <div className="title">Create a nwe AOI</div>
-                    <div className="desc">Create an AOI by uploading your own shape file or by <br />drawing a polygon on the map</div>
+                        <div className="title">Create a nwe AOI</div>
+                        <div className="desc">Create an AOI by uploading your own shape file or by <br />drawing a polygon on the map</div>
                     </div>
                     <div className="right">
                         <button onClick={onClose}><img src={img.closeBtn} width="20" height="20" alt='Close' title='Close' /></button>

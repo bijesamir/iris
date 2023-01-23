@@ -69,8 +69,8 @@ export const FloatingTable: React.FC<FloatingTableProps> = () => {
 		}
 	]
 	const rowClickHandler = (event:React.MouseEventHandler<HTMLDivElement>) =>{
-		event.preventDefault();
-		
+		// event.preventDefault();
+		/*
 		const div: HTMLDivElement = event.currentTarget;
 		let tempSelected = [...selected];
 		let id:number = parseInt(div.dataset.id);
@@ -80,6 +80,7 @@ export const FloatingTable: React.FC<FloatingTableProps> = () => {
 		}else{
 			setSelected([...selected,parseInt(div.dataset.id)]);
 		}
+		*/
 		}
 
 	return (
