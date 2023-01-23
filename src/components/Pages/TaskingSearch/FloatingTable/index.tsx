@@ -2,9 +2,11 @@ import React, { useEffect } from 'react';
 import {Style} from "./Style"
 import { img } from "../../../../assets/img";
 
-interface FloatingTableProps {}
+interface FloatingTableProps {
+	onClose : ()=>void
+}
 
-export const FloatingTable: React.FC<FloatingTableProps> = () => {
+export const FloatingTable: React.FC<FloatingTableProps> = ({onClose}) => {
 	const [selected,setSelected] = React.useState([]);
 	const data = [
 		{
@@ -70,22 +72,26 @@ export const FloatingTable: React.FC<FloatingTableProps> = () => {
 	]
 	const rowClickHandler = (event:React.MouseEventHandler<HTMLDivElement>) =>{
 		// event.preventDefault();
-		/*
+		// @ts-ignore
 		const div: HTMLDivElement = event.currentTarget;
 		let tempSelected = [...selected];
+		// @ts-ignore
 		let id:number = parseInt(div.dataset.id);
+		// @ts-ignore
 		if(selected.includes(id)){
 			// Need to remove
+			// @ts-ignore
 			setSelected(tempSelected.filter(item=>item!==parseInt(id)));
 		}else{
+			// @ts-ignore 
 			setSelected([...selected,parseInt(div.dataset.id)]);
 		}
-		*/
+		
 		}
 
 	return (
 		<>
-		<Style>
+		<Style >
 			<div className="topbar">
 				<div className="left">
 				<h2>Upcoming tasking opportunities</h2>
@@ -93,7 +99,7 @@ export const FloatingTable: React.FC<FloatingTableProps> = () => {
 				You'll fine below the opportunities fitting the criteria you entered </div>
 			</div>
 			<div className="right">
-				<button className="closeBtn"><img src={img.closeBtn} width="20" height="20" /></button>
+				<button onClick={onClose} className="closeBtn"><img src={img.closeBtn} width="20" height="20" /></button>
 			</div>
 				</div>
             
@@ -148,7 +154,12 @@ export const FloatingTable: React.FC<FloatingTableProps> = () => {
 			</div>
 
 			{
-				data.map((item,index)=><div data-id={item.id} key={item.id} className={`trow ${selected.includes(item.id) ? 'selected' :''}`} onClick={rowClickHandler}>
+				data.map((item,index)=>
+				<>
+				<div data-id={item.id} 
+				key={item.id}
+				// @ts-ignore
+				 className={`trow ${selected.includes(item.id) ? 'selected' :''}`} onClick={rowClickHandler}>
 				
 				<div className="tcol">
 					<div className="badge">{index+1}</div>
@@ -178,7 +189,7 @@ export const FloatingTable: React.FC<FloatingTableProps> = () => {
 				<div className="tcol">{item.conflict_status}</div>
 
 				
-		</div>)
+		</div></>)
 			}
 			<div className="tfoot">
 				<div className="left">

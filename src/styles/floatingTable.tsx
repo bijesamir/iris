@@ -19,6 +19,7 @@ padding-top : ${pxToem(15)};
         .closeBtn {
             border:none;
             background:none;
+            cursor:pointer;
             padding:0 ${pxToem(16)} 0 0;
             margin:0;
 
