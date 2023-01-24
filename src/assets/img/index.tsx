@@ -10,4 +10,5 @@ import nextBtn from "./next-btn.svg";
 import closeBtn from "./close-btn.svg";
 import drawIcon from "./draw.svg";
 import uploadIcon from "./close-btn.svg";
-export const img = {logo,nav1,nav2,nav3,nav4,nav5,arrowDown,prevBtn,nextBtn,closeBtn,drawIcon,uploadIcon};
+import checkIcon from "./check.svg";
+export const img = {checkIcon,logo,nav1,nav2,nav3,nav4,nav5,arrowDown,prevBtn,nextBtn,closeBtn,drawIcon,uploadIcon};

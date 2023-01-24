@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from 'styled-components';
 import { Logo } from '../../modules/Logo';
 import { MainNav } from "../../modules/Mainnav";
@@ -7,10 +7,12 @@ import { Style } from '../Home/Style';
 import { FloatingTable } from "./FloatingTable";
 import { CreateNewAOI } from "../../modules/createNewAOI/";
 import { ProductOption } from "../../modules/ProductOption";
+import { InfoBox } from "../../modules/InfoBox";
 interface StateType {
   createNewAOIStatus: boolean,
   tableStatus: boolean,
-  productionOptionStatus: boolean
+  productionOptionStatus: boolean,
+  infoBoxStatus: boolean
 }
 export function TaskingSearch() {
   const activeNav = 'taskingSearch';
@@ -19,9 +21,11 @@ export function TaskingSearch() {
   const [state, setState] = useState<StateType>({
     createNewAOIStatus: false,
     tableStatus: true,
-    productionOptionStatus: true
+    productionOptionStatus: true,
+    infoBoxStatus: true
 
   })
+
   const startHandler = () => {
     console.log("StrtHandler ...");
     setShow(false);
@@ -81,6 +85,19 @@ export function TaskingSearch() {
           onOK={ok}
           // @ts-ignore
           onClose={() => setState({ ...state, "productionOptionStatus": false })} title="Product option" />
+      }
+      {
+        state.infoBoxStatus && <InfoBox
+          title="Archive pre-ordered"
+          description="Your request was handled
+  successfully. An email was send
+  to the client for review"
+          mode="alert"
+          // @ts-ignore
+
+          btn="Cancel Task"
+          onClose={() => setState({ ...state, "infoBoxStatus": false })}
+          onBtnClick={() => console.log("asdf")} />
       }
 
       <CreateNewAOI

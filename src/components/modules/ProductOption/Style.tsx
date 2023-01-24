@@ -94,6 +94,7 @@ export const Style = styled.div`
                     margin-top: 10px;
                     font-size: 14px;
                     background:#6b7178;
+                    cursor:pointer;
                     &.ok{
                         background: var(---highlight-color);
                     }
