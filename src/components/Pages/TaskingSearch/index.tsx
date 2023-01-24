@@ -21,7 +21,7 @@ export function TaskingSearch() {
   const [state, setState] = useState<StateType>({
     createNewAOIStatus: false,
     tableStatus: true,
-    productionOptionStatus: true,
+    productionOptionStatus: false,
     infoBoxStatus: true
 
   })
@@ -79,7 +79,7 @@ export function TaskingSearch() {
         </div>
       </Style>
       {
-        state.productionOptionStatus && <ProductOption
+        state.productionOptionStatus === true && <ProductOption
           options={productOptions}
           // @ts-ignore
           onOK={ok}
@@ -99,15 +99,17 @@ export function TaskingSearch() {
           onClose={() => setState({ ...state, "infoBoxStatus": false })}
           onBtnClick={() => console.log("asdf")} />
       }
-
-      <CreateNewAOI
-        show={state.createNewAOIStatus}
-        onStart={startHandler}
-        // @ts-ignore
-        onUpload={uploadHandler}
-        // @ts-ignore
-        onClose={() => setShow({ ...state, "createNewAOIStatus": false })}
-      />
+    {
+      state.createNewAOIStatus === true && <CreateNewAOI
+      show={state.createNewAOIStatus}
+      onStart={startHandler}
+      // @ts-ignore
+      onUpload={uploadHandler}
+      // @ts-ignore
+      onClose={() => setShow({ ...state, "createNewAOIStatus": false })}
+    />
+    }
+      
     </>
   );
 }

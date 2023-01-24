@@ -4,6 +4,5 @@ export const pxToem = (num:number)=>{
 export const pxToRem = (num:number)=>{
     
     let cal = num*0.0625;
-    console.log(num +  + cal)
-    return cal+"rem";
+     return cal+"rem";
 }

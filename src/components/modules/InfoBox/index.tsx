@@ -14,6 +14,7 @@ interface InfoBoxProps {
 export const InfoBox: React.FC<InfoBoxProps> = ({ title, description,mode,btn,onBtnClick,onClose }) => {
     React.useEffect(()=>{
         setTimeout(()=>{
+            // @ts-ignore
             onClose();
         },5000)
     },[])

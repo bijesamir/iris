@@ -1,7 +1,7 @@
 
 import styled from 'styled-components';
 import {floatingTable} from "../../../../styles/floatingTable";
-import { pxToem } from '../../../../lib';
+import { pxToRem } from '../../../../lib';
 export const Style = styled.div`
     ${floatingTable}
     .table {
@@ -9,13 +9,13 @@ export const Style = styled.div`
         .throw{
             display:grid;
             grid-template-columns: 50px 150px 150px 11% 10% 10% 10% 10% 10% auto;
-            font-size: ${pxToem(16)};
+            font-size: ${pxToRem(16)};
             font-weight:700;
             .tcol{
                 display:flex;
-                padding:0 ${pxToem(10)};
+                padding:0 ${pxToRem(10)};
                 text-align:center;
-                height:${pxToem(50)};
+                height:${pxToRem(50)};
                 justify-content:center;
                 align-items:center;
                 .sortCol{
@@ -34,7 +34,7 @@ export const Style = styled.div`
             display:grid;
             border-top:solid 1px #293032;
             grid-template-columns: 50px 150px 150px 11% 10% 10% 10% 10% 10% auto;
-            font-size: ${pxToem(16)};
+            font-size: ${pxToRem(16)};
             font-weight:300;
             &:hover,&.selected{
                 .tcol{
@@ -43,9 +43,9 @@ export const Style = styled.div`
             }
             .tcol{
                 display:flex;
-                padding:0 ${pxToem(10)};
+                padding:0 ${pxToRem(10)};
                 text-align:center;
-                height:${pxToem(50)};
+                height:${pxToRem(50)};
                 justify-content:center;
                 align-items:center;
                 .checkData{
@@ -53,7 +53,7 @@ export const Style = styled.div`
                     text-align:left;
                     justify-content:start;
                     input{
-                        margin:0 ${pxToem(10)} 0 0;
+                        margin:0 ${pxToRem(10)} 0 0;
                     }
 
                 }
