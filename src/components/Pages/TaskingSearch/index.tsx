@@ -8,11 +8,13 @@ import { FloatingTable } from "./FloatingTable";
 import { CreateNewAOI } from "../../modules/createNewAOI/";
 import { ProductOption } from "../../modules/ProductOption";
 import { InfoBox } from "../../modules/InfoBox";
+import {ConfirmBox} from "../../modules/ConfirmBox";
 interface StateType {
   createNewAOIStatus: boolean,
   tableStatus: boolean,
   productionOptionStatus: boolean,
-  infoBoxStatus: boolean
+  infoBoxStatus: boolean,
+  confirmBoxStatus:boolean
 }
 export function TaskingSearch() {
   const activeNav = 'taskingSearch';
@@ -22,7 +24,8 @@ export function TaskingSearch() {
     createNewAOIStatus: false,
     tableStatus: true,
     productionOptionStatus: false,
-    infoBoxStatus: true
+    infoBoxStatus: false,
+    confirmBoxStatus :true,
 
   })
 
@@ -109,7 +112,15 @@ export function TaskingSearch() {
       onClose={() => setShow({ ...state, "createNewAOIStatus": false })}
     />
     }
-      
+      {
+        state.confirmBoxStatus && <ConfirmBox 
+        title="Pre-order archive" 
+        message="You are about to pre-order this tasking. An email will be  send to the client for confirmation of the order." 
+        okTxt="Preo-order tasking"         
+        onCancel={()=>setState({...state,"confirmBoxStatus":false})}         
+        onOK={()=>console.log("Ok triggered")} 
+        />
+      }
     </>
   );
 }
