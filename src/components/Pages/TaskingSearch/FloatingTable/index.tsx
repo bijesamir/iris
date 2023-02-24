@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Style } from "./Style"
 import { img } from "../../../../assets/img";
+import SearchBox from '../../../modules/SearchBox';
 
 interface FloatingTableProps {
 	onClose: () => void
@@ -122,7 +123,10 @@ export const FloatingTable: React.FC<FloatingTableProps> = ({ onClose }) => {
 
 				<div className="tableControl">
 					<div className="left">
-
+						<SearchBox 
+							value=""
+							onChange={(e)=>console.log(e.target.value)} 
+						/>
 					</div>
 					<div className="right">
 						<button>Order Tasks</button>

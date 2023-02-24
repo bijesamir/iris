@@ -9,6 +9,7 @@ import { CreateNewAOI } from "../../modules/createNewAOI/";
 import { ProductOption } from "../../modules/ProductOption";
 import { InfoBox } from "../../modules/InfoBox";
 import {ConfirmBox} from "../../modules/ConfirmBox";
+import SearchBox from "../../modules/SearchBox/";
 interface StateType {
   createNewAOIStatus: boolean,
   tableStatus: boolean,
@@ -25,7 +26,7 @@ export function TaskingSearch() {
     tableStatus: true,
     productionOptionStatus: false,
     infoBoxStatus: false,
-    confirmBoxStatus :true,
+    confirmBoxStatus :false,
 
   })
 
@@ -72,7 +73,7 @@ export function TaskingSearch() {
           </div>
           <div className='thirdCol'>
             <div className="mapHolder">
-
+             
             </div>
             {
               tableStatus && <FloatingTable onClose={() => setState({ ...state, "tableStatus": false })} />
